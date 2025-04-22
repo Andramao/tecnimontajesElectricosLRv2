@@ -439,7 +439,18 @@ footer .redes a
 {
 	body
 	{
-		font-size: 15px;
+	 font-size: 15px;
+	}
+
+	header 
+	{
+   	 padding: 15px 0;
+   	 position: fixed;
+    	 top: 1px;
+   	 left: 0;
+   	 z-index: 2;
+   	 background-color: white;
+    	 width: 93%;
 	}
 
 	header .container nav
@@ -619,6 +630,7 @@ footer .redes a
 		object-position: center;
 		margin-top: 0px;
 		margin-left: -40px;
+		padding-top: 20%;
 	}
 
 	.seccion {
@@ -642,6 +654,10 @@ footer .redes a
 	#servicios .bloque-servicio .bloque-contenido-servicio {
 		padding-top: 100px;
 		height: auto;
+	}
+
+	.boton.boton-blanco {
+		margin-top: 13%;
 	}
 
 	#galeria img 
