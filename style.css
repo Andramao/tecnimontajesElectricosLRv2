@@ -151,6 +151,7 @@ footer .redes a
 	font-size: 20px;
 	font-weight: bold;
 	border: 1px solid #c81818;
+	position: absolute;
 }
 
 .boton.boton-negro
@@ -657,7 +658,7 @@ footer .redes a
 	}
 
 	.boton.boton-blanco {
-		margin-top: 13%;
+		margin-top: -53%;
 	}
 
 	#galeria img 
