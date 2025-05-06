@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios Tecnimontajes Eléctricos L.R</title>
+    <title>Servicios Tecnimontajes Eléctricos Luis Rincón S.A.S </title>
     <style>
+       
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -14,8 +15,11 @@
         header {
             background-color: #c81818;
             color: white;
-            padding: 20px;
+            padding: 0px;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            height: 16%;
         }
         nav {
             margin: 20px 0;
@@ -30,14 +34,20 @@
             margin: auto;
             overflow: hidden;
         }
+
+        img {
+            width: 30%;
+            border-radius: 20px;
+            
+        }
         h2 {
             color: #333;
         }
         .servicio {
             background: white;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 5px;
+            margin: 113px 0;
+            padding: 54px;
+            border-radius: 25px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         footer {
@@ -49,13 +59,33 @@
             bottom: 0;
             width: 100%;
         }
+
+        @media (max-width: 480px) {
+            header {    
+            height: 18%;
+            }
+            h1 {
+                font-size: medium;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 932px) {
+            header {    
+            height: 25%;
+            }
+
+            h1 {
+            font-size: medium;
+        }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Servicios Tecnimontajes Eléctricos L.R</h1>
+    <h1>Servicios Tecnimontajes Eléctricos Luis Rincón S.A.S </h1>
     <nav>
+        <a href="index.html">Inicio</a>
         <a href="#domotica">Domótica</a>
         <a href="#tableros">Mantenimiento de Tableros</a>
         <a href="#lineas">Líneas de Producción</a>
@@ -67,32 +97,38 @@
 <div class="container">
     <section id="domotica" class="servicio">
         <h2>Domótica</h2>
-        <p>Implementamos soluciones de domótica que permiten el control y automatización de sistemas eléctricos en tu hogar o industria, mejorando la eficiencia y la comodidad.</p>
+        <img src="img1/domotica.jpg">
+        <p>Dentro de nuestros proximos proyectos esperamos incursionar implementando soluciones de domótica que permitan el control y automatización de sistemas eléctricos en tu hogar o industria, mejorando la eficiencia y la comodidad.</p>
     </section>
 
     <section id="tableros" class="servicio">
         <h2>Mantenimiento de Tableros Eléctricos</h2>
+        <img src="img1/tableros.jpg">
         <p>Ofrecemos servicios de mantenimiento preventivo y correctivo para tableros eléctricos, asegurando su correcto funcionamiento y seguridad.</p>
     </section>
 
     <section id="lineas" class="servicio">
         <h2>Mantenimiento Eléctrico de Líneas de Producción</h2>
+        <img src="img1/lineas de producción.jpg">
         <p>Realizamos mantenimiento eléctrico en líneas de producción, garantizando la continuidad operativa y minimizando tiempos de inactividad.</p>
     </section>
 
     <section id="montaje" class="servicio">
         <h2>Montaje Eléctrico de Maquinaria Industrial</h2>
+        <img src="img1/montajes.jpg">
         <p>Nos encargamos del montaje eléctrico de maquinaria industrial, asegurando que todos los sistemas estén correctamente instalados y funcionando.</p>
     </section>
 
     <section id="iluminacion" class="servicio">
         <h2>Soluciones de Iluminación</h2>
+        <img src="img1/iluminacion.jpg">
+        <img src="img1/iluminacion1.jpg">
         <p>Ofrecemos soluciones de iluminación con luminarias LED y sistemas solares, así como cambios de tecnología para mejorar la eficiencia energética.</p>
     </section>
 </div>
 
 <footer>
-    <p>&copy; 2025 Servicios Tecnimontajes Electricos L.R. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Servicios Tecnimontajes Electricos L.R. S.A.S Todos los derechos reservados.</p>
 </footer>
 
 </body>
