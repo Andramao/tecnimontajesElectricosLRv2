@@ -391,7 +391,12 @@ footer .redes a
 	left: 0;
 	width: 100%;
 	height: 108%;
-	/*filter: grayscale(1);*/
+	filter: grayscale(1);
+}
+
+#contactenos:hover iframe
+{
+	filter: grayscale(0);
 }
 
 #contactenos form
