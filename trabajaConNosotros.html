@@ -5,11 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Trabaja con Nosotros </title>
   <style>
+    header {
+            background-color: #c81818;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            font-weight: bold;
+            font-size: 1.6rem;
+    }
+
+    h1 {
+      text-align: center;
+    }
+      
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
       background: #f9f9f9;
     }
+
     form {
       background: white;
       padding: 25px;
@@ -18,11 +35,20 @@
       border-radius: 8px;
       box-shadow: 0 0 12px rgba(0,0,0,0.1);
     }
+
+    p.intro {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
     label {
       display: block;
       margin-top: 15px;
       font-weight: bold;
     }
+
     input, textarea {
       width: 100%;
       padding: 8px;
@@ -32,10 +58,12 @@
       font-size: 14px;
       box-sizing: border-box;
     }
+
     textarea {
       resize: vertical;
       height: 90px;
     }
+
     button {
       margin-top: 20px;
       padding: 12px;
@@ -48,9 +76,11 @@
       cursor: pointer;
       font-size: 16px;
     }
+
     button:hover {
       background: #a11515;
     }
+
     #status {
       margin-top: 15px;
       font-weight: bold;
@@ -66,10 +96,34 @@
 	    border: 1px solid #c81818;
     }
 
+    .footer {
+            background-color: grey;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            position: fixed;
+            left: 0; right: 0;bottom: -11px;
+            width: 95%;
+            font-size: 0.9rem;
+    }
+
     @media(max-width: 480px) {
-      a {
-        margin-left: 98px;
+      a{
+        margin-left: auto;
       }
+
+      h1 {
+        text-align: center;
+        margin-top: 15%;
+      }
+    }
+
+    @media (max-width: 640px) {
+        
+        header {
+            font-size: 1.3rem;
+            padding: 15px 10px;
+        }
     }
 
 
@@ -77,20 +131,38 @@
   </style>
 </head>
 <body>
+<header>Tecnimontajes Eléctricos L.R S.A.S - Trabaja con Nosotros </header>
+<main>
 
 <form id="trabaja-form">
-  <h2>Trabaja con Nosotros - Tecnimontajes Electricos L.R S.A.S</h2>
+
+  <h1>Únete a Nuestro Equipo</h1>
+  <p class="intro">
+      En Tecnimontajes Eléctricos L.R. S.A.S estamos en constante crecimiento y buscamos personas comprometidas y responsables que quieran formar parte de nuestra familia.
+      Si te interesa desarrollarte profesionalmente en el área eléctrica y de mantenimiento, te invitamos a enviarnos tu información.
+  </p>
+
   <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="user_name" required />
+  <input type="text" id="nombre" name="user_name" placeholder="Tu nombre completo" required />
 
   <label for="correo">Correo Electrónico:</label>
-  <input type="email" id="correo" name="user_email" required />
+  <input type="email" id="correo" name="user_email" placeholder="correo@ejemplo.com" required />
 
   <label for="telefono">Teléfono:</label>
-  <input type="tel" id="telefono" name="user_phone" required />
+  <input type="tel" id="telefono" name="user_phone" placeholder="Ej: +54 123 123 5678" pattern="[\d\s+\-()]{7,}" required />
+
+  <label for="posicion">Posición a la que postulas *</label>
+  <select id="posicion" name="posicion" required>
+      <option value="" disabled selected>Seleccione una opción</option>
+      <option value="tecnico">Técnico Eléctrico</option>
+      <option value="mantenimiento">Mantenimiento</option>
+      <option value="operador">Operador de Maquinaria</option>
+      <option value="administracion">Administración</option>
+      <option value="otro">Otro</option>
+  </select>
 
   <label for="mensaje">Mensaje:</label>
-  <textarea id="mensaje" name="message" required></textarea>
+  <textarea id="mensaje" name="message" placeholder="Cuéntanos sobre ti (opcional)" required></textarea>
 
   <button type="submit">Enviar</button>
   <div id="status"></div>
@@ -100,6 +172,42 @@
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
+
+  document.getElementById('trabaja-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+
+          // Simple validation
+          const nombre = this.nombre.value.trim();
+          const email = this.email.value.trim();
+          const telefono = this.telefono.value.trim();
+          const posicion = this.posicion.value;
+
+          if (!nombre) {
+              alert('Por favor, ingresa tu nombre completo.');
+              this.nombre.focus();
+              return;
+          }
+          if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+              alert('Por favor, ingresa un correo electrónico válido.');
+              this.email.focus();
+              return;
+          }
+          if (!telefono || !/^[\d\s+\-()]{7,}$/.test(telefono)) {
+              alert('Por favor, ingresa un teléfono válido.');
+              this.telefono.focus();
+              return;
+          }
+          if (!posicion) {
+              alert('Por favor, selecciona la posición a la que postulas.');
+              this.posicion.focus();
+              return;
+          }
+
+          // Simulate form submission
+          alert('Gracias por enviar tu solicitud. Nos pondremos en contacto contigo pronto.');
+          this.reset();
+      });
+
   emailjs.init('RnN_eYhYUL1CfK-Cf');
 
   const form = document.getElementById('trabaja-form');
@@ -114,14 +222,24 @@
       .then(() => {
         statusDiv.style.color = 'green';
         statusDiv.textContent = 'Mensaje enviado con éxito, ¡gracias!';
+          alert('Gracias por enviar tu solicitud. Nos pondremos en contacto contigo pronto.');
         form.reset();
+        
       }, (error) => {
         statusDiv.style.color = 'red';
         statusDiv.textContent = 'Error al enviar el mensaje. Intenta de nuevo.';
         console.error('Error:', error);
       });
+          
   });
+  
 </script>
+</main>
+<div class="footer">
+  &copy; 2025 Tecnimontajes Eléctricos L.R. S.A.S Todos los derechos reservados.
+</div>
+  
 
 </body>
 </html>
+
